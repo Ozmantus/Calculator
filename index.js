@@ -7,6 +7,21 @@ const screen = blessed.screen({
     title: 'Calculator',
 });
 
+const container = blessed.box({
+    parent: screen,
+    content: 'Test',
+    border: 'line',
+})
+
+blessed.button({
+    content: 'Plus',
+    parent: container,
+    border: 'line',
+    width: 10,
+    height: 3,
+    top: 2,
+})
+
 // Exit
 screen.key(['C-c'], (ch, key) => {
     return process.exit(0);
